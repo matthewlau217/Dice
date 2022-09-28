@@ -1,29 +1,39 @@
+Dice Die;
 void setup()
 {
-	noLoop();
+  size (1980,1080);
+  noLoop();
 }
 void draw()
 {
-	//your code here
+  for (int j = 0; j <= 1920; j += 12) {
+    for (int i = 0; i <= 1080; i += 12) {
+      Die = new Dice(j,i);
+      //Die.roll();
+      Die.show();
+    }
+  }
 }
 void mousePressed()
 {
-	redraw();
+  redraw();
 }
-class Die //models one single dice cube
+class Dice 
 {
-	//variable declarations here
-	
-	Die(int x, int y) //constructor
-	{
-		//variable initializations here
-	}
-	void roll()
-	{
-		//your code here
-	}
-	void show()
-	{
-		//your code here
-	}
+  int myX, myY, num;
+  Dice(int x, int y)
+  {
+    myX = x;
+    myY = y;
+  }
+  void roll()
+  {
+    num = (int)(Math.random()*6);
+    System.out.println (num);
+  }
+  void show()
+  {
+   fill(255,255,255);
+   rect(myX,myY,12,12);
+  }
 }
