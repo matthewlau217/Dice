@@ -1,4 +1,5 @@
 Dice Die;
+int counter = 0;
 void setup()
 {
   size (1980,1080);
@@ -13,10 +14,16 @@ void draw()
       Die.show();
     }
   }
+  textSize(300);
+  fill(0,0,0);
+  text("Total Dots: ",200,350);
+  text(counter,450,650);
+  System.out.println(counter);
 }
 void mousePressed()
 {
   redraw();
+  counter = 0;
 }
 class Dice 
 {
@@ -29,7 +36,7 @@ class Dice
   void roll()
   {
     num = (int)(Math.random()*6)+1;
-    System.out.println (num);
+    counter += num;
   }
   void show()
   {
@@ -57,12 +64,12 @@ class Dice
       ellipse(myX+9,myY+3,2,2);
       ellipse(myX+9,myY+9,2,2);
     } else if (num == 6){
-      ellipse(myX+3,myY+2.5,2,2);
-      ellipse(myX+3,myY+9.5,2,2);
+      ellipse(myX+3,myY+2,2,2);
+      ellipse(myX+3,myY+10,2,2);
       ellipse(myX+3,myY+6,2,2);
       ellipse(myX+9,myY+6,2,2);
-      ellipse(myX+9,myY+2.5,2,2);
-      ellipse(myX+9,myY+9.5,2,2);
+      ellipse(myX+9,myY+2,2,2);
+      ellipse(myX+9,myY+10,2,2);
     }
   }
 }
