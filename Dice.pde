@@ -1,5 +1,6 @@
 Dice Die;
 int counter = 0;
+int size = 40;
 void setup()
 {
   size (1980,1080);
@@ -7,18 +8,18 @@ void setup()
 }
 void draw()
 {
-  for (int j = 0; j <= 1920; j += 12) {
-    for (int i = 0; i <= 1080; i += 12) {
+  for (int j = 0; j <= 1600*size; j += 12) {
+    for (int i = 0; i <= 900*size; i += 12) {
       Die = new Dice(j,i);
       Die.roll();
       Die.show();
+      //System.out.println(counter);
     }
   }
   textSize(300);
   fill(0,0,0);
   text("Total Dots: ",200,350);
   text(counter,450,650);
-  System.out.println(counter);
 }
 void mousePressed()
 {
