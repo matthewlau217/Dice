@@ -1,20 +1,29 @@
 Dice Die;
 int counter = 0;
-int size = 50;
+int multiplier = 50;
+int average = ((1600*multiplier*900*multiplier)/144)*3;
+int savedTime;
+int totalTime = 60;
+int minutes = 0;
 void setup()
 {
   size (1980,1080);
   noLoop();
+  savedTime = second();
 }
 void draw()
 {
-  for (int j = 0; j <= 1600*size; j += 12) {
-    for (int i = 0; i <= 900*size; i += 12) {
+  int passedTime = second() - savedTime;
+  if (passedTime == minutes){
+    
+  }
+  for (int j = 0; j <= 1600*multiplier; j += 12) {
+    for (int i = 0; i <= 900*multiplier; i += 12) {
       Die = new Dice(j,i);
       Die.roll();
       Die.show();
     }
-    //System.out.println(counter);
+    System.out.println("Time: " + "Current Counter Value: " + counter + "Final Average Counter: " + average);
   }
   textSize(300);
   fill(0,0,0);
