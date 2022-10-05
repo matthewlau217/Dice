@@ -1,10 +1,18 @@
 Dice Die;
 int counter = 0;
 int multiplier = 50;
+int savedTime;
+int totalTime = 60000;
+int minutes = 0;
+int passedTime;
+int average = ((16*9*multiplier*multiplier)/144)*30000;
+int sd = ((16*9*multiplier*multiplier)/144)*17080;
+
 void setup()
 {
   size (1980,1080);
   noLoop();
+  savedTime = millis();
 }
 void draw()
 {
@@ -13,8 +21,13 @@ void draw()
       Die = new Dice(j,i);
       Die.roll();
       Die.show();
+      passedTime = millis() - savedTime;
+      if (passedTime > totalTime - 1) {
+        savedTime = millis();
+        minutes++;
+      }
+      System.out.println("Time: " + minutes + ":" + passedTime/1000 + " Dots: " +  counter + " Dot Average: " + average + " Satandard Deviation: " + sd);
     }
-    System.out.println(counter);
   }
   textSize(300);
   fill(0,0,0);
