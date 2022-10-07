@@ -26,7 +26,7 @@ void draw()
         savedTime = millis();
         minutes++;
       }
-      //System.out.println("Time: " + minutes + ":" + passedTime/1000 + " Dots: " +  counter + " Dot Average: " + average + " Satandard Deviation: " + sd);
+      System.out.println("Time: " + minutes + ":" + passedTime/1000 + " Dots: " +  counter + " Dot Average: " + average + " Satandard Deviation: " + sd);
     }
   }
   textSize(300);
