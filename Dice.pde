@@ -1,6 +1,6 @@
 Dice Die;
 int counter = 0;
-int multiplier = 50;
+int multiplier = 2;
 int savedTime;
 int totalTime = 60000;
 int minutes = 0;
